@@ -1,0 +1,113 @@
+                                ASSIGNMENT 1 
+
+1. Explain the difference between frontend, backend, and full-stack development with suitable 
+   real-world examples.
+Answer:   Frontend development focuses on the user interface and user experience, using technologies like HTML, CSS, and JavaScript.
+          For example, the layout and design of an online store’s homepage.
+              
+          Backend development handles server-side logic, databases, and APIs, using languages like Node.js, Python, or Java.
+          For example, processing orders or managing user accounts.
+              
+          Full-stack development combines both frontend and backend skills, allowing a developer to build complete web applications,
+          such as a blogging platform.
+              
+
+
+
+2. Create a simple diagram showing how the client-server model works in web architecture.
+Answer:       Client (Browser)
+                     |
+                     v
+              HTTP Request
+                     |
+                     v
+              Web Server
+                     |
+              Processes Request
+                     |
+                     v
+              HTTP Response
+                     |
+                     v
+              Client (Browser displays webpage)
+
+
+
+
+3. Describe how a browser requests and displays a web page from a web server. 
+
+Answer:1.User enters URL in the browser.
+       2.DNS lookup converts URL to IP address.
+       3.Browser sends an HTTP/HTTPS request to the web server.
+       4.Web server processes request and returns HTML, CSS, JS files.
+       5.Browser parses HTML to build the DOM, CSS for styling, JS for functionality.
+       6.Browser renders the web page visually for the user.
+
+
+
+4. Identify and list the tools required to set up a web development environment. Explain the purpose 
+   of each.
+
+Answer:      Tool	                            Purpose
+       VS Code / Sublime Text / Atom    	Code editor for writing HTML, CSS, JS.
+       Browser (Chrome, Firefox)	        Test and debug websites.
+       Node.js & npm	                    Run JS outside browser, manage libraries/packages.
+       Git & GitHub	                    Version control and collaboration.
+       Web Server (Apache/Nginx)	        Host files locally or on the internet.
+       Database (MySQL, MongoDB)	        Store and retrieve data for dynamic apps.
+
+
+
+5. Explain what a web server is and give examples of commonly used servers. 
+Answer:
+Definition: Software that receives requests from clients (browsers) and responds with web pages or data.
+Examples:
+    Apache
+    Nginx
+    Microsoft IIS
+    Node.js (Express server)
+
+
+
+6. Define the roles of a frontend developer, backend developer, and database administrator in a project. 
+Answer:
+Role	                        Responsibilities
+Frontend Developer	            Build user interface, implement responsive design, ensure interactivity.
+Backend Developer	            Handle server logic, database interactions, APIs, security.
+Database Administrator (DBA)	Design, maintain, and optimize databases, ensure data security and backups.
+
+
+
+7. Install VS Code and configure it for HTML, CSS, and JavaScript development. Take a screenshot of the setup. 
+Answer: Frontend-dev\verification.png
+
+
+8. Explain the difference between static and dynamic websites. Provide an example of each. 
+Answer:
+Type	    Definition	                                                        Example
+Static	    Pages are fixed, content does not change unless manually updated.	Portfolio site, company brochure site
+Dynamic	    Pages are generated on-the-fly based on user input or database.	    Facebook, Gmail, Amazon
+
+
+
+9. Research and list five web browsers. Explain how rendering engines differ between them. 
+Answer:1.Google Chrome – Blink
+       → Fast, secure, and Chromium-based engine.
+
+       2.Mozilla Firefox – Gecko
+       → Open-source engine focused on web standards and customization.
+
+       3.Microsoft Edge – Blink
+       → Uses Chromium’s Blink for better performance and compatibility.
+
+       4.Apple Safari – WebKit
+       → Optimized for Apple devices, efficient and power-saving.
+
+       5.Opera – Blink (earlier Presto)
+       → Uses Blink for speed and modern web support.
+
+Difference:
+Rendering engines (Blink, Gecko, WebKit) interpret HTML, CSS, and JavaScript differently, causing slight variations in how web pages display and perform across browsers.
+
+10. Draw a labeled diagram showing the basic web architecture flow — client, server, database, and APIs.
+Answer: Frontend-dev\web architecture.png
