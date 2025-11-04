@@ -1,0 +1,74 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Page */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f6f7fb;
+  color: #222;
+  padding: 28px;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 22px;
+  color: #2b3a67;
+}
+
+/* Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+/* Each figure card */
+figure {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(32,40,80,0.06);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* image fills cell */
+figure img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* hover zoom */
+figure:hover img {
+  transform: scale(1.06);
+}
+
+/* lift card on hover */
+figure:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(32,40,80,0.12);
+}
+
+/* caption */
+figcaption {
+  padding: 12px 14px;
+  text-align: center;
+  font-weight: 600;
+  color: #263248;
+  background: linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.02));
+  border-top: 1px solid rgba(0,0,0,0.03);
+  font-size: 0.98rem;
+}
+
+/* responsive tweak for very small screens */
+@media (max-width: 420px) {
+  figure img { height: 180px; }
+  .title { font-size: 1.4rem; }
+}

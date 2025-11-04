@@ -1,0 +1,111 @@
+/* ===== Global Styles ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* ===== Grid Container ===== */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 80px auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== Header ===== */
+.dashboard-header {
+    grid-area: header;
+    background-color: #00796b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* ===== Sidebar ===== */
+.dashboard-sidebar {
+    grid-area: sidebar;
+    background-color: #263238;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.dashboard-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-sidebar li {
+    margin-bottom: 20px;
+}
+
+.dashboard-sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.dashboard-sidebar a:hover {
+    color: #00bcd4;
+}
+
+/* ===== Main Content ===== */
+.dashboard-main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Boxes inside main */
+.box {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* One box spans two columns */
+.box3 {
+    grid-column: span 2;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main";
+        height: auto;
+    }
+
+    .dashboard-main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .box3 {

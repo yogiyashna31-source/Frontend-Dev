@@ -1,0 +1,80 @@
+/* Center card using Flexbox */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Perspective container */
+.container {
+  perspective: 1000px;
+}
+
+/* Card setup */
+.card {
+  width: 300px;
+  height: 400px;
+  position: relative;
+}
+
+/* Card inner - handles flip */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+/* Flip on hover */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card sides */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Front side image fills entire card */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Title overlay at bottom */
+.title-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+.title-overlay h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+/* Back side */
+.card-back {
+  background-color: #ffcad4;
+  color: #333;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: cen

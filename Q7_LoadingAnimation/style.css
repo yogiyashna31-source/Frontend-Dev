@@ -1,0 +1,43 @@
+/* Center loader using Flexbox */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f6f8;
+}
+
+/* Loader container */
+.loader {
+  display: flex;
+  gap: 10px;
+}
+
+/* Circle styling */
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #3498db;
+  border-radius: 50%;
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+/* Slight delays for each circle */
+.circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
