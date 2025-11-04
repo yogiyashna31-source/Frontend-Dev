@@ -1,0 +1,25 @@
+/* Form demonstrates outline styles, outline-offset and focus */
+*{box-sizing:border-box}
+body{font-family:Arial;margin:0;background:#f7fbff;color:#0b1220}
+header, footer{text-align:center;padding:12px}
+.center{display:flex;justify-content:center;padding:24px}
+.form{background:white;padding:22px;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,0.06);width:320px;display:flex;flex-direction:column;gap:12px}
+
+/* inputs styling */
+input, textarea{padding:10px;border:1px solid #d9e2ec;border-radius:8px;outline:none;transition:box-shadow .2s,outline-color .2s}
+
+/* different outline styles demonstration using focus */
+input:focus, textarea:focus{
+  outline:3px solid rgba(34,197,94,0.18); /* semi-transparent outline */
+  outline-offset:4px; /* space between element edge and outline */
+  box-shadow:0 6px 12px rgba(3,7,18,0.06);
+}
+
+/* alternative outline for specific input using attribute selector */
+input[type="email"]:focus{
+  outline:3px dashed rgba(0,119,182,0.18);
+}
+
+/* submit button */
+button{padding:10px;border-radius:8px;border:none;background:#0077b6;color:white;cursor:pointer}
+button:hover{background:#005f8a}

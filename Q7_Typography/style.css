@@ -1,0 +1,21 @@
+/* Fonts, weights, spacing, mark/strong/em styles, ::first-letter and ::first-line */
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff8f3;color:#0b1220;padding:28px}
+header{text-align:center;margin-bottom:18px}
+.article{max-width:760px;margin:0 auto}
+h2{font-family:Arial,Helvetica,sans-serif;font-weight:700;margin-bottom:8px}
+
+/* paragraph readability */
+article p{font-size:1rem;line-height:1.8;letter-spacing:0.01em;text-align:justify;margin-bottom:16px}
+
+/* style mark, strong, em */
+mark{background:#fff9b1;padding:0.1rem 0.25rem;border-radius:3px}
+strong{color:#0b1220;font-weight:800}
+em{color:#6b7280;font-style:italic}
+
+/* first-letter and first-line emphasis */
+article p::first-letter{font-size:2.2rem;font-weight:700;float:left;margin-right:8px}
+article p::first-line{font-weight:700}
+
+/* Balanced layout for narrow screens */
+@media (max-width:600px){article p{font-size:0.98rem;line-height:1.6}}

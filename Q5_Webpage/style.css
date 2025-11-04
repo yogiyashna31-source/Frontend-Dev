@@ -1,0 +1,32 @@
+/* Demonstrates attribute selectors, pseudo-classes/elements and combinators */
+/* attribute selectors */
+input[type="text"]{border:2px solid #d1d5db;padding:6px;border-radius:6px}
+/* selects inputs with type="text" */
+
+a[href^="https"]{color:#0077b6;text-decoration:underline}
+/* ^ matches hrefs that start with 'https' */
+
+a[href$=".org"]{font-weight:700}
+/* $ matches hrefs that end with '.org' */
+
+/* pseudo-classes */
+a:hover{opacity:0.85}
+input:focus{outline:3px solid rgba(0,119,182,0.15)}
+
+/* nth-child */
+.list li:nth-child(odd){background:#f7fafc;padding:8px;border-radius:4px}
+.list li:nth-child(3){color:#ff6b6b;font-weight:700}
+
+/* pseudo-elements: add icons before/after */
+.list li::before{content:"• ";color:#0077b6;font-weight:700}
+nav a::after{content:" ↗";font-size:0.9em;color:#6b7280;margin-left:4px}
+
+/* combinators */
+/* child combinator (>) select direct child labels in form */
+form > label{display:block;margin:10px 0;font-weight:600}
+
+/* adjacent sibling (+) style item immediately after nav */
+nav + .list{margin-top:20px;border-top:1px dashed #e6eef6;padding-top:12px}
+
+/* general sibling (~) style any label that comes after form in DOM */
+form ~ nav{margin-top:12px}

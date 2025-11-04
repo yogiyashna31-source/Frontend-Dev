@@ -1,0 +1,35 @@
+/* Demonstrates different border styles, padding, rounded corners and hover color change */
+:root{--gap:20px;--bg:#f7fafc;--accent:#1f6feb}
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#0b1220}
+header, footer{text-align:center;padding:16px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+main{padding:28px}
+.boxes{display:flex;gap:var(--gap);flex-wrap:wrap;justify-content:center;align-items:flex-start}
+
+/* Base box */
+.box{
+  background:white;
+  padding:8px;
+  min-width:160px;
+  text-align:center;
+  border-radius:6px;
+  transition:border-color .3s ease, transform .15s ease;
+}
+
+/* Different border styles */
+.box.solid{border:3px solid #2b2d42}
+.box.dashed{border:3px dashed #0b8457;padding:16px}
+.box.double{border:6px double #b455f6;padding:24px}
+.box.groove{border:6px groove #ff7a59;padding:32px}
+.box.rounded{border:2px solid #ffb703;border-radius:16px;padding:20px}
+
+/* Hover effect: change border color and slightly lift */
+.box:hover{
+  border-color:var(--accent);
+  transform:translateY(-6px);
+}
+
+/* Make layout wrap sensibly on small screens */
+@media (max-width:600px){
+  .boxes{flex-direction:column;align-items:center}
+}

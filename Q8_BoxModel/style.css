@@ -1,0 +1,24 @@
+/* Visualizes content, padding, border and margin; shows default vs border-box */
+*{box-sizing:border-box}
+body{font-family:Arial;margin:0;background:#fbfbff;color:#0b1220;padding:24px}
+header{text-align:center;margin-bottom:18px}
+.center{display:flex;justify-content:center}
+.box-demo{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+
+/* Outer demonstrates margin area visually */
+.outer{background:#f1f5f9;padding:20px;margin:20px;border-radius:8px}
+
+/* Border layer (visible with outline) */
+.border{outline:4px solid #ffd166;padding:12px;border-radius:6px;background:#fff}
+
+/* Padding layer */
+.padding{background:#e6fffa;padding:20px;border-radius:6px}
+
+/* Content box */
+.content{background:#fff;padding:8px;border:2px dashed #b2b2ff;text-align:center;font-weight:700}
+
+/* Demonstration of box-sizing: by default, we already use border-box above (global)
+   To show default behavior, you can comment out the global box-sizing and see differences. */
+
+.notes{max-width:260px}
+.notes p{margin:10px 0;font-size:0.95rem}

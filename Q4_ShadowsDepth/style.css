@@ -1,0 +1,22 @@
+/* Multiple box-shadow styles, text-shadow on headings and lift-on-hover */
+*{box-sizing:border-box}
+body{font-family:Arial;margin:0;background:#f7f9fb;color:#0b1220}
+header, footer{text-align:center;padding:12px;background:#fff}
+.cards{display:flex;gap:20px;justify-content:center;padding:32px;flex-wrap:wrap}
+
+/* Base card */
+.card{background:white;padding:20px;border-radius:12px;min-width:220px;transition:box-shadow .25s,transform .25s}
+
+/* Different shadow depths */
+.c1{box-shadow:0 4px 12px rgba(2,6,23,0.08)}
+.c2{box-shadow:0 8px 20px rgba(2,6,23,0.12)}
+.c3{box-shadow:0 14px 30px rgba(2,6,23,0.16)}
+
+/* Headings with text-shadow for depth */
+.card h2{text-shadow:0 2px 6px rgba(0,0,0,0.06)}
+
+/* Hover: lift up using larger shadow and slight upward transform */
+.card:hover{transform:translateY(-12px);box-shadow:0 24px 40px rgba(0,0,0,0.18)}
+
+/* Responsive: stack */
+@media (max-width:700px){.cards{flex-direction:column;align-items:center}}

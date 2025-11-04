@@ -1,0 +1,18 @@
+/* Four boxes demonstrating rotate, scale, translate and skew on hover */
+*{box-sizing:border-box}
+body{font-family:Arial;margin:0;padding:24px;background:#f7fafc;color:#0b1220}
+.row{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap}
+.transform{text-align:center}
+.box{width:140px;height:120px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(2,6,23,0.06);transition:all .4s ease}
+
+/* specific hover transforms */
+.box.rotate:hover{transform:rotate(18deg)}
+.box.scale:hover{transform:scale(1.15)}
+.box.translate:hover{transform:translateY(-12px) translateX(6px)}
+.box.skew:hover{transform:skewX(10deg) skewY(6deg)}
+
+/* labels */
+figcaption{margin-top:8px;font-size:0.95rem;color:#475569}
+
+/* responsive */
+@media (max-width:700px){.row{flex-direction:column}}
