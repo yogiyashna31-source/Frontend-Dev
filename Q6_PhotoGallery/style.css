@@ -1,0 +1,109 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 50px 20px 30px;
+  background: linear-gradient(90deg, #2b5876, #4e4376);
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+/* Gallery Layout */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 5%;
+}
+
+/* Each Photo Card */
+.photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  flex: 1 1 calc(33.333% - 40px);
+  max-width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  border-radius: 15px;
+}
+
+/* Hover Effects */
+.photo:hover img {
+  transform: scale(1.1);
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 0 0 15px 15px;
+}
+
+.photo:hover .caption {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  background-color: #2b5876;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Responsive Layouts */
+@media (max-width: 900px) {
+  .photo {
+    flex: 1 1 calc(50% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .photo {
+    flex: 1 1 100%;
+  }
+}

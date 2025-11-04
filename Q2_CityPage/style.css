@@ -1,0 +1,156 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #0b132b, #1c2541);
+    color: white;
+    padding: 1rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Main content sections */
+main {
+    margin-top: 80px;
+}
+
+/* Section 1: Intro (Linear Gradient Background) */
+.intro {
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+    text-align: center;
+    padding: 100px 10%;
+    border-bottom: 4px solid #fff;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    color: #0b132b;
+}
+
+/* Section 2: History (Fixed Background Image) */
+.history {
+    background: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 120px 10%;
+}
+
+.history h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.history p {
+    background-color: rgba(0,0,0,0.5);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Section 3: Attractions (Radial Gradient) */
+.attractions {
+    background: radial-gradient(circle at center, #ffe259, #ffa751);
+    color: #222;
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.attractions h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.attractions ul {
+    list-style: none;
+}
+
+.attractions li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    border: 2px solid #fff;
+    background-color: rgba(255,255,255,0.7);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Section 4: Culture (Fixed Background Image) */
+.culture {
+    background: url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    padding: 120px 10%;
+}
+
+.culture h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.culture p {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c2541;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 0.5rem;
+    }
+
+    .intro, .history, .attractions, .culture {
+        padding: 80px 5%;
+    }
+}

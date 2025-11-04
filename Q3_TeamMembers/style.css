@@ -1,0 +1,105 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: #222;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #0b132b, #1c2541);
+    color: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Team Section Layout */
+.team-section {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 60px 10%;
+}
+
+/* Individual Team Cards */
+.team-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Highlight the Team Lead */
+.lead {
+    border: 3px solid #007bff;
+    background: linear-gradient(145deg, #dbe9ff, #ffffff);
+    transform: scale(1.05);
+}
+
+/* Hover Animation */
+.team-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Profile Images */
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+/* Text Styles */
+.team-card h2 {
+    font-size: 1.4rem;
+    color: #0b132b;
+    margin-bottom: 5px;
+}
+
+.team-card h4 {
+    font-size: 1rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c2541;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .team-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 90%;
+    }
+}
