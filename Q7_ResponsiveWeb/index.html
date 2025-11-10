@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Combined Responsive Web Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header + Navigation -->
+  <header class="header">
+    <h1>Responsive Web Design Showcase</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Guide</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-grid">
+
+    <!-- Section 1: Image Gallery -->
+    <section class="gallery section fade-in">
+      <h2>Responsive Image Gallery</h2>
+      <div class="gallery-grid">
+        <img src="https://picsum.photos/300/200?random=1" alt="Image 1">
+        <img src="https://picsum.photos/300/200?random=2" alt="Image 2">
+        <img src="https://picsum.photos/300/200?random=3" alt="Image 3">
+      </div>
+    </section>
+
+    <!-- Section 2: Responsive Design Explanation -->
+    <section class="info section fade-in">
+      <h2>What is Responsive Design?</h2>
+      <p>
+        Responsive web design ensures that a website looks and functions well
+        across all devices — desktops, tablets, and mobiles. It relies on flexible
+        layouts, relative units, and media queries to adapt automatically to the screen size.
+      </p>
+      <p>
+        Techniques include using Flexbox, CSS Grid, the <code>clamp()</code> function for typography,
+        and smooth transitions to enhance user experience.
+      </p>
+    </section>
+
+    <!-- Section 3: Cheat Sheet Preview -->
+    <section class="cheatsheet section fade-in">
+      <h2>Responsive CSS Cheat Sheet</h2>
+      <div class="cheat-cards">
+        <div class="card">
+          <h3>Media Queries</h3>
+          <p><code>@media (max-width: 700px) { ... }</code></p>
+        </div>
+        <div class="card">
+          <h3>Flexbox</h3>
+          <p>Use <code>display: flex;</code> for dynamic layouts.</p>
+        </div>
+        <div class="card">
+          <h3>Typography</h3>
+          <p><code>font-size: clamp(1rem, 2vw, 2rem);</code></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Contact: yashna@example.com | © 2025 Responsive Web Demo</p>
+  </footer>
+
+</body>
+</html>

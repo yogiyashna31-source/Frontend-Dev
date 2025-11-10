@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.typography-section {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #1b1b1b;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 📱 Responsive adjustment below 700px */
+@media (max-width: 700px) {
+  .typography-section {
+    padding: 1.5rem;
+  }
+
+  p {
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+  }
+}

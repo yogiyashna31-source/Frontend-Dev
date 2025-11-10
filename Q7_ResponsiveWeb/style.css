@@ -1,0 +1,94 @@
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f3f9ff, #e0f7fa);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  animation: fadeInPage 1.5s ease-in-out;
+}
+
+/* ===== Header & Navigation ===== */
+.header {
+  background: #00796b;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #b2dfdb;
+  transform: scale(1.1);
+}
+
+/* ===== Main Grid Layout ===== */
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* ===== Sections ===== */
+.section {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+  color: #004d40;
+  margin-bottom: 1rem;
+}
+
+/* ===== Gallery Section ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: grayscale(80%);
+}
+
+.gallery-grid im

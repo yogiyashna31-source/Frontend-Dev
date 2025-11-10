@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design Principles Summary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Responsive Design Principles</h1>
+    <p>Understand the core concepts of making web pages adapt beautifully to any screen size.</p>
+  </header>
+
+  <main class="grid-container">
+    <!-- Fluid Layouts -->
+    <div class="card">
+      <h2>Fluid Layouts</h2>
+      <p>Use percentage-based widths so elements resize smoothly with the viewport.</p>
+      <pre><code>container {
+  width: 90%;
+  margin: 0 auto;
+}</code></pre>
+    </div>
+
+    <!-- Flexible Media -->
+    <div class="card">
+      <h2>Flexible Media</h2>
+      <p>Ensure images and videos scale within their containers using max-width and height auto.</p>
+      <pre><code>img {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+    </div>
+
+    <!-- Breakpoints -->
+    <div class="card">
+      <h2>Breakpoints</h2>
+      <p>Use media queries to change layout and style based on screen width or device type.</p>
+      <pre><code>@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+}</code></pre>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Responsive Web Design Summary | Designed by Yashna</p>
+  </footer>
+
+</body>
+</html>

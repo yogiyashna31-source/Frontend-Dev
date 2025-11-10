@@ -1,0 +1,111 @@
+/* ========== Global Styles ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== Header ========== */
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #1565c0;
+}
+
+.header p {
+  color: #555;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-top: 0.5rem;
+}
+
+/* ========== Comparison Container ========== */
+.comparison-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* ========== Image Box ========== */
+.image-box {
+  text-align: center;
+  flex: 1 1 45%;
+  transition: transform 0.4s ease;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: filter 0.5s ease, transform 0.4s ease;
+}
+
+/* Filter applied to "After" image */
+.filtered {
+  filter: brightness(0.8) contrast(1.4);
+}
+
+/* Hover effect: fade filter away smoothly */
+.filtered:hover {
+  filter: none;
+  transform: scale(1.02);
+}
+
+.image-box figcaption {
+  margin-top: 0.8rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Hover lift for both images */
+.image-box:hover {
+  transform: translateY(-8px);
+}
+
+/* ========== Footer ========== */
+.footer {
+  text-align: center;
+  background: #1565c0;
+  color: white;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 700px) {
+  .comparison-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-box {
+    flex: 1 1 100%;
+  }
+
+  .image-box img {
+    max-width: 100%;
+  }
+
+  .image-box figcaption {
+    font-size: 0.95rem;
+  }
+}
