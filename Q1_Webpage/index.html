@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-Classes Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Pseudo-Class Demonstration</h1>
+  
+  <div class="container">
+    <!-- Hover Example -->
+    <div class="example">
+      <a href="#" class="hover-link">Hover Over Me</a>
+      <p><strong>:hover</strong> → Changes color when you hover over the element.</p>
+    </div>
+
+    <!-- Focus Example -->
+    <div class="example">
+      <input type="text" placeholder="Click here" class="focus-input">
+      <p><strong>:focus</strong> → Highlights when the input is selected or clicked.</p>
+    </div>
+
+    <!-- Active Example -->
+    <div class="example">
+      <button class="active-btn">Press Me</button>
+      <p><strong>:active</strong> → Changes style when the button is actively pressed.</p>
+    </div>
+
+    <!-- nth-child Example -->
+    <div class="example">
+      <ul class="nth-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <p><strong>:nth-child()</strong> → Targets specific list items (e.g., every 2nd item).</p>
+    </div>
+  </div>
+</body>
+</html>

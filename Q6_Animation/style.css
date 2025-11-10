@@ -1,0 +1,106 @@
+/* ====== Basic Page Styling ====== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f9fc;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  background-color: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====== Animation Container ====== */
+.animation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ====== 1. Moving Box Animation ====== */
+.moving-box {
+  width: 100px;
+  height: 100px;
+  background-color: #ff6b6b;
+  border-radius: 10px;
+  animation: moveBox 3s ease-in-out infinite alternate;
+}
+
+/* Keyframes for moving box */
+@keyframes moveBox {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(150px);
+    background-color: #ffb703;
+  }
+  100% {
+    transform: translateX(0);
+    background-color: #ff6b6b;
+  }
+}
+
+/* ====== 2. Bouncing Ball Animation ====== */
+.bouncing-ball {
+  width: 80px;
+  height: 80px;
+  background-color: #00b4d8;
+  border-radius: 50%;
+  animation: bounce 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Keyframes for bouncing ball */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-120px);
+    background-color: #48cae4;
+  }
+}
+
+/* ====== 3. Color Changing Text Animation ====== */
+.color-text {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: colorChange 4s ease-in-out infinite alternate;
+  animation-direction: alternate-reverse;
+}
+
+/* Keyframes for color-changing text */
+@keyframes colorChange {
+  0% {
+    color: #0077b6;
+  }
+  50% {
+    color: #ffb703;
+  }
+  100% {
+    color: #d62828;
+  }
+}
+
+/* ====== Footer Styling ====== */
+footer {
+  font-size: 0.9rem;
+  margin-top: auto;
+}

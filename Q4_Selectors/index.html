@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Selectors Practice Page</title>
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Practice Page</h1>
+  </header>
+
+  <main>
+    <section class="content">
+      <h2>1. Basic Selectors</h2>
+      <p>This paragraph is styled using the <strong>element selector</strong>.</p>
+      <p class="highlight">This one uses a <strong>class selector</strong> for highlighting.</p>
+      <p id="special">This paragraph is targeted with an <strong>ID selector</strong>.</p>
+      
+      <h2>2. Attribute Selectors</h2>
+      <p>Here’s a link with <strong>target="_blank"</strong>: 
+        <a href="https://www.google.com" target="_blank">Visit Google</a>
+      </p>
+      <p>And this link without target attribute: 
+        <a href="https://www.wikipedia.org">Visit Wikipedia</a>
+      </p>
+
+      <h2>3. Combinators</h2>
+      <div class="box">
+        <p>This paragraph is a <strong>direct child</strong> of .box (child selector).</p>
+        <div>
+          <p>This one is nested deeper, so it’s <strong>not</strong> affected by the child selector.</p>
+        </div>
+      </div>
+
+      <h3>Sibling Selectors Example</h3>
+      <p>This paragraph is styled using the <strong>adjacent sibling (+)</strong> selector.</p>
+      <p>And this one uses the <strong>general sibling (~)</strong> selector.</p>
+
+      <h2>4. Descendant Selector Example</h2>
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CSS Practice by Yashna Yogi</p>
+  </footer>
+</body>
+</html>

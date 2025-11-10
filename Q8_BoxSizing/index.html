@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box-Sizing Comparison</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Box-Sizing Comparison Page</h1>
+  </header>
+
+  <main>
+    <section class="container">
+      <!-- Box 1: Default box-sizing (content-box) -->
+      <div class="box content-box">
+        <h2>Default: content-box</h2>
+        <p>
+          In <strong>content-box</strong> (default), the width property applies 
+          only to the content. Padding and border are added outside, increasing 
+          the total box size.
+        </p>
+      </div>
+
+      <!-- Box 2: Using border-box -->
+      <div class="box border-box">
+        <h2>box-sizing: border-box;</h2>
+        <p>
+          In <strong>border-box</strong>, the width includes content, padding, 
+          and border. The total size stays fixed, making layouts easier to control.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Box-Sizing Demo by Yashna Yogi</p>
+  </footer>
+</body>
+</html>

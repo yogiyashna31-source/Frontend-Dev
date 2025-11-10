@@ -1,0 +1,159 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #e3f2fd, #ede7f6);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #3f51b5;
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Container */
+.main-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Image */
+.card-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3f51b5;
+  margin-bottom: 1.5rem;
+}
+
+/* Form */
+.form {
+  width: 100%;
+  text-align: left;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #3f51b5;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+input:focus {
+  border-color: #3f51b5;
+  outline: none;
+  box-shadow: 0 0 6px rgba(63, 81, 181, 0.4);
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  background-color: #3f51b5;
+}
+
+.secondary {
+  background-color: #9c27b0;
+}
+
+/* Hover & Active Effects */
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: rgba(63, 81, 181, 0.8);
+  color: white;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .card {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

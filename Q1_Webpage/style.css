@@ -1,0 +1,91 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 2.2em;
+}
+
+/* Flex container */
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Each example box */
+.example {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Hover Example */
+.hover-link {
+  display: inline-block;
+  color: #ffdf5d;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: 0.3s;
+}
+.hover-link:hover {
+  color: #fff;
+  background: #ffdf5d;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Focus Example */
+.focus-input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+.focus-input:focus {
+  border-color: #ffdf5d;
+  box-shadow: 0 0 8px #ffdf5d;
+}
+
+/* Active Example */
+.active-btn {
+  background: #ffdf5d;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.active-btn:active {
+  background: #ffd000;
+  transform: scale(0.95);
+}
+
+/* nth-child Example */
+.nth-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+.nth-list li {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 5px 0;
+  border-radius: 6px;
+}
+.nth-list li:nth-child(2n) {
+  background: #ffdf5d;
+  color: #000;
+}

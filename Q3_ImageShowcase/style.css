@@ -1,0 +1,69 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Image Grid Container */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual image cards */
+.image-card {
+  position: relative;
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+/* Image styling */
+.image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect */
+.image-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(70%);
+}
+
+/* Caption styling */
+figcaption {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  font-size: 1em;
+  color: #333;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-card {
+    width: 90%;
+  }
+}
