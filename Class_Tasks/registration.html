@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+
+    <h1>User Registration</h1>
+
+    <form id="registrationForm">
+        
+        <div>
+            <label for="fullName">Full Name:</label><br>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="contact">Contact Number:</label><br>
+            <input type="text" id="contact" name="contact" required>
+            <p id="contactError" style="color:red; font-size:14px;"></p>
+        </div>
+        <br>
+
+        <div>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required>
+            <p id="passwordError" style="color:red; font-size:14px;"></p>
+        </div>
+        <br>
+
+        <div>
+            <label for="confirmPassword">Confirm Password:</label><br>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <p id="confirmError" style="color:red; font-size:14px;"></p>
+        </div>
+        <br>
+
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+
+    <script src="task.js"></script>
+
+</body>
+</html>
