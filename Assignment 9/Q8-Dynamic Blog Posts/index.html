@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Blog Posts</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Admin Blog Panel</h1>
+    </header>
+
+    <main>
+        <section id="blog-controls">
+            <input type="text" id="new-post" placeholder="Enter blog title">
+            <button id="add-post">Add New Post</button>
+            <button id="prepend-post">Prepend Featured Post</button>
+            <button id="remove-last">Remove Last Post</button>
+            <input type="text" id="highlight-keyword" placeholder="Highlight keyword">
+            <button id="highlight-posts">Highlight Posts</button>
+        </section>
+
+        <section id="blog-posts">
+            <ul>
+                <li class="post">Understanding JavaScript Closures</li>
+                <li class="post">Top 10 CSS Tricks</li>
+                <li class="post">React vs Angular: A Comparison</li>
+                <li class="post">Introduction to Machine Learning</li>
+                <li class="post">Web Accessibility Best Practices</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

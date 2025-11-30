@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Course Catalog</h1>
+    </header>
+
+    <main>
+        <section id="search-panel">
+            <input type="text" id="search" placeholder="Search courses...">
+            <button id="clear-search">Clear</button>
+            <p>Matched Courses: <span id="match-count">0</span></p>
+        </section>
+
+        <section id="courses">
+            <ul>
+                <li class="course">Introduction to Python</li>
+                <li class="course">Web Development with HTML & CSS</li>
+                <li class="course">Data Science Basics</li>
+                <li class="course">Machine Learning 101</li>
+                <li class="course">Advanced JavaScript</li>
+                <li class="course">React for Beginners</li>
+                <li class="course">Database Management Systems</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

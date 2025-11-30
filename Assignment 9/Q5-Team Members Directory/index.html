@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members Directory</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Team Members Directory</h1>
+    </header>
+
+    <main>
+        <section id="team">
+            <!-- Department 1 -->
+            <div class="department">
+                <h2 class="department-name">Marketing</h2>
+                <div class="manager">Manager: Alice</div>
+                <ul>
+                    <li class="employee">Bob</li>
+                    <li class="employee">Charlie</li>
+                    <li class="employee">David</li>
+                </ul>
+            </div>
+
+            <!-- Department 2 -->
+            <div class="department">
+                <h2 class="department-name">Development</h2>
+                <div class="manager">Manager: Emma</div>
+                <ul>
+                    <li class="employee">Frank</li>
+                    <li class="employee">Grace</li>
+                    <li class="employee">Hannah</li>
+                </ul>
+            </div>
+
+            <!-- Department 3 -->
+            <div class="department">
+                <h2 class="department-name">HR</h2>
+                <div class="manager">Manager: Ian</div>
+                <ul>
+                    <li class="employee">Jack</li>
+                    <li class="employee">Karen</li>
+                    <li class="employee">Liam</li>
+                </ul>
+            </div>
+        </section>
+
+        <button id="random-employee">Highlight Random Employee's Siblings</button>
+        <button id="toggle-team">Collapse/Expand Team</button>
+    </main>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-jQuery Widgets</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery version 1.12.4 for carousel -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- jQuery version 3.6.0 for modal/tooltips -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        .carousel { width: 300px; height: 150px; overflow: hidden; border: 1px solid #ccc; margin-bottom: 20px; }
+        .carousel div { width: 300px; height: 150px; text-align: center; line-height: 150px; font-size: 20px; display: none; }
+        .widget { display: inline-block; padding: 10px 20px; margin: 5px; border: 1px solid #ccc; cursor: pointer; }
+        .active-widget { background-color: #ffd700; }
+        .tooltip { display: none; position: absolute; background-color: black; color: white; padding: 5px; border-radius: 4px; }
+        #modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 2px solid #000; }
+        #modal-overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard Widgets</h1>
+    </header>
+
+    <main>
+        <!-- Carousel -->
+        <div class="carousel">
+            <div>Slide 1</div>
+            <div>Slide 2</div>
+            <div>Slide 3</div>
+        </div>
+
+        <!-- Widgets -->
+        <div class="widget" title="Notifications">Widget 1</div>
+        <div class="widget" title="Settings">Widget 2</div>
+        <div class="widget" title="Profile">Widget 3</div>
+
+        <!-- Modal Trigger -->
+        <button id="open-modal">Open Modal</button>
+
+        <div id="modal-overlay"></div>
+        <div id="modal">
+            <h3>Modal Popup</h3>
+            <p>This is a notification modal.</p>
+            <button id="close-modal">Close</button>
+        </div>
+    </main>
+</body>
+</html>
