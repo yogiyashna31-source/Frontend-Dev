@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BMI Calculator</title>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+        background:#f7fafc;
+    }
+
+    .container{
+        width:350px;
+        background:#fff;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input{
+        width:100%;
+        padding:10px;
+        margin:10px 0;
+        border-radius:8px;
+        border:1px solid #ccc;
+    }
+
+    button{
+        width:100%;
+        padding:10px;
+        border:none;
+        background:#4f46e5;
+        color:#fff;
+        border-radius:8px;
+        cursor:pointer;
+    }
+
+    .progress{
+        width:100%;
+        height:20px;
+        background:#e5e7eb;
+        border-radius:10px;
+        margin-top:15px;
+    }
+
+    .bar{
+        height:100%;
+        width:0%;
+        border-radius:10px;
+        transition:0.5s;
+    }
+
+    #result{
+        font-weight:bold;
+        margin-top:15px;
+        text-align:center;
+        font-size:18px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>BMI Calculator</h2>
+
+    <label>Weight (kg)</label>
+    <input type="number" id="weight" placeholder="Enter weight">
+
+    <label>Height (meters)</label>
+    <input type="number" id="height" step="0.01" placeholder="Enter height">
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+
+    <div id="result"></div>
+
+    <div class="progress">
+        <div class="bar" id="bar"></div>
+    </div>
+</div>
+
+<script>
+function calculateBMI(){
+    let weight = parseFloat(document.getElementById("weight").value);
+    let height = parseFloat(document.getElementById("height").value);
+
+    // BMI = weight / (height * height)
+    let bmi = weight / (height * height);
+
+    let resultText = "";
+    let barColor = "";
+
+    // Comparison for categories
+    if(bmi < 18.5){
+        resultText = "Underweight";
+        barColor = "#3b82f6";
+    }
+    else if(bmi < 25){
+        resultText = "Normal";
+        barColor = "#10b981";
+    }
+    else if(bmi < 30){
+        resultText = "Overweight";
+        barColor = "#f59e0b";
+    }
+    else{
+        resultText = "Obese";
+        barColor = "#ef4444";
+    }
+
+    // Update UI
+    document.getElementById("result").innerHTML = 
+        "BMI: " + bmi.toFixed(2) + " (" + resultText + ")";
+
+    // Progress bar width (BMI capped to 40 for display)
+    let width = Math.min(bmi, 40) * 2.5; // 40 BMI = 100%
+
+    let bar = document.getElementById("bar");
+    bar.style.width = width + "%";
+    bar.style.background = barColor;
+}
+</script>
+
+</body>
+</html>

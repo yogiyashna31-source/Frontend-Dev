@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grocery Bill Calculator</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background:#f3f4f6;
+    }
+    .box{
+        width:330px;
+        background:white;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+    input{
+        width:100%;
+        padding:10px;
+        margin:8px 0;
+        border-radius:8px;
+        border:1px solid #ccc;
+    }
+    button{
+        width:100%;
+        padding:10px;
+        margin-top:10px;
+        background:#4f46e5;
+        border:none;
+        color:white;
+        font-weight:bold;
+        border-radius:8px;
+        cursor:pointer;
+    }
+    #output{
+        margin-top:15px;
+        font-weight:bold;
+        text-align:center;
+    }
+</style>
+
+</head>
+<body>
+    
+<div class="box">
+    <h2>Grocery Bill Calculator</h2>
+
+    <label>Price (₹)</label>
+    <input type="number" id="price" placeholder="Enter price">
+
+    <label>Quantity</label>
+    <input type="number" id="qty" placeholder="Enter quantity">
+
+    <button onclick="calculateBill()">Calculate</button>
+
+    <div id="output"></div>
+</div>
+
+
+<script>
+function calculateBill(){
+    let price = Number(document.getElementById("price").value);
+    let qty = Number(document.getElementById("qty").value);
+
+    // Arithmetic: total = price * quantity
+    let total = price * qty;
+
+    let finalAmount = total;
+
+    // Comparison: If total > 1000, apply 10% discount
+    if(total > 1000){
+        finalAmount = total - (total * 0.10);
+    }
+
+    // Display result
+    document.getElementById("output").innerHTML =
+        `Total: ₹${total.toFixed(2)}<br>
+         Final Amount: ₹${finalAmount.toFixed(2)}`;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Step Goal Tracker</title>
+  <style>
+    :root{
+      --size: 160px;
+      --bg:#f3f4f6;
+      --accent:#4f46e5;
+      --muted:#6b7280;
+      --success:#10b981;
+      --danger:#ef4444;
+    }
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      display:flex;
+      min-height:100vh;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg, #fbfbff 0%, #f7fafc 100%);
+      margin:0;
+      color:#111827;
+      padding:20px;
+    }
+
+    .card{
+      width: 420px;
+      background:white;
+      border-radius:14px;
+      padding:22px;
+      box-shadow: 0 8px 30px rgba(15,23,42,0.08);
+      display:grid;
+      grid-template-columns: auto 1fr;
+      gap:16px;
+      align-items:center;
+    }
+
+    /* Circular progress container */
+    .progress-wrap{
+      width:var(--size);
+      height:var(--size);
+      display:grid;
+      place-items:center;
+      position:relative;
+    }
+
+    .progress {
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      background:
+        conic-gradient(var(--accent) 0deg, var(--accent) 0deg),
+        #e6e9f2;
+      display:grid;
+      place-items:center;
+      box-shadow: inset 0 -4px 10px rgba(0,0,0,0.04);
+    }
+
+    .progress .inner {
+      width: calc(var(--size) - 34px);
+      height: calc(var(--size) - 34px);
+      border-radius:50%;
+      background: white;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:6px;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.04);
+    }
+
+    .percent {
+      font-weight:700;
+      font-size:18px;
+    }
+    .goal-label{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .controls{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .row{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    input[type="number"]{
+      width:120px;
+      padding:8px 10px;
+      border-radius:8px;
+      border:1px solid #e6e9f2;
+      font-size:14px;
+      outline:none;
+    }
+    button{
+      padding:9px 12px;
+      border-radius:10px;
+      border:0;
+      background:var(--accent);
+      color:white;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .message{
+      font-weight:700;
+      font-size:15px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .message .dot{
+      width:10px;height:10px;border-radius:50%;
+      display:inline-block;
+    }
+    .stats{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* responsive */
+    @media (max-width:460px){
+      .card{ width: 100%; grid-template-columns: 1fr; text-align:center;}
+      .progress-wrap{ margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="Step goal tracker">
+    <div class="progress-wrap" aria-hidden="true">
+      <div id="progress" class="progress">
+        <div class="inner">
+          <div class="percent" id="percent">0%</div>
+          <div class="goal-label">of 10,000 steps</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls" aria-live="polite">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-weight:800;font-size:18px">Step Goal</div>
+          <div class="stats" id="stepsCount">0 steps</div>
+        </div>
+        <div style="text-align:right">
+          <div class="stats">Goal: <strong id="goalValue">10,000</strong></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="stepsInput" class="sr-only" style="display:none">Enter steps</label>
+        <input id="stepsInput" type="number" min="0" step="1" placeholder="Enter steps" aria-label="Enter steps count">
+        <button id="setBtn">Set</button>
+        <button id="addBtn" title="Add +500 steps">+500</button>
+        <button id="resetBtn" style="background:#ef4444">Reset</button>
+      </div>
+
+      <div class="message" id="message">
+        <span class="dot" id="dot" style="background:var(--danger)"></span>
+        <span id="msgText">Keep Going</span>
+      </div>
+
+      <div class="stats" id="hint">Type steps and press Set. Or use +500 to simulate activity.</div>
+    </div>
+  </div>
+
+  <script>
+    // Configuration
+    const goal = 10000;
+
+    // DOM
+    const stepsInput = document.getElementById('stepsInput');
+    const setBtn = document.getElementById('setBtn');
+    const addBtn = document.getElementById('addBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const percentEl = document.getElementById('percent');
+    const progressEl = document.getElementById('progress');
+    const stepsCount = document.getElementById('stepsCount');
+    const msgText = document.getElementById('msgText');
+    const dot = document.getElementById('dot');
+    const goalValue = document.getElementById('goalValue');
+
+    goalValue.textContent = goal.toLocaleString();
+
+    // initial state
+    let steps = 0;
+    updateUI();
+
+    // Ternary usage (core requirement):
+    // message = steps >= goal ? "Goal Achieved" : "Keep Going"
+    function getMessage(s){
+      return s >= goal ? "Goal Achieved" : "Keep Going";
+    }
+
+    // update circular progress using conic-gradient
+    function updateProgress(s){
+      const pct = Math.min(100, Math.round((s / goal) * 100));
+      percentEl.textContent = pct + '%';
+      // set conic gradient degrees: pct% of 360deg
+      const degrees = Math.round((pct / 100) * 360);
+      progressEl.style.background = `conic-gradient(var(--accent) ${degrees}deg, #e6e9f2 ${degrees}deg)`;
+    }
+
+    function updateUI(){
+      stepsCount.textContent = `${steps.toLocaleString()} steps`;
+      updateProgress(steps);
+
+      const message = getMessage(steps); // ternary inside getMessage
+      msgText.textContent = message;
+
+      if(message === "Goal Achieved"){
+        dot.style.background = getComputedStyle(document.documentElement).getPropertyValue('--success');
+      }else{
+        dot.style.background = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+      }
+    }
+
+    // Event handlers
+    setBtn.addEventListener('click', () => {
+      const val = parseInt(stepsInput.value, 10);
+      if(!Number.isFinite(val) || val < 0){
+        alert('Please enter a valid non-negative number of steps.');
+        return;
+      }
+      steps = val;
+      updateUI();
+    });
+
+    addBtn.addEventListener('click', () => {
+      steps += 500; // simulate quick increment
+      updateUI();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      steps = 0; stepsInput.value = '';
+      updateUI();
+    });
+
+    // also allow live update while typing (optional)
+    stepsInput.addEventListener('input', () => {
+      const val = parseInt(stepsInput.value, 10);
+      if(Number.isFinite(val) && val >= 0){
+        // preview only, do not change permanent steps until Set clicked
+        updateProgress(val);
+        // preview message using ternary inline
+        msgText.textContent = val >= goal ? "Goal Achieved" : "Keep Going";
+        dot.style.background = val >= goal ? getComputedStyle(document.documentElement).getPropertyValue('--success') : getComputedStyle(document.documentElement).getPropertyValue('--danger');
+      } else {
+        updateUI(); // revert to saved value
+      }
+    });
+
+    // accessibility: allow Enter to set
+    stepsInput.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter') setBtn.click();
+    });
+  </script>
+</body>
+</html>
