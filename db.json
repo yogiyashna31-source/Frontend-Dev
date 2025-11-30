@@ -1,0 +1,39 @@
+{
+  "students": [
+    {
+      "id": "2",
+      "name": "Rahul Sharma",
+      "section": "B",
+      "marks": 78,
+      "grade": "B"
+    },
+    {
+      "id": "3",
+      "name": "Priya Patel",
+      "section": "A",
+      "marks": 85,
+      "grade": "A"
+    },
+    {
+      "id": "4",
+      "name": "Vikram Singh",
+      "section": "C",
+      "marks": 65,
+      "grade": "C"
+    },
+    {
+      "id": "5",
+      "name": "Neha Kapoor",
+      "section": "B",
+      "marks": 90,
+      "grade": "A"
+    },
+    {
+      "id": 1764499335465,
+      "name": "Preeti Sharma",
+      "section": "EA",
+      "marks": "99",
+      "grade": "A"
+    }
+  ]
+}
