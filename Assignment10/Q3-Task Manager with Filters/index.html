@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Manager</title>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  h2 { margin-bottom: 10px; }
+  select { padding: 5px; margin-bottom: 20px; }
+  ul { list-style: none; padding: 0; }
+  li { padding: 10px; border: 1px solid #ccc; margin-bottom: 5px; display: flex; align-items: center; justify-content: space-between; }
+  .completed { text-decoration: line-through; color: gray; }
+</style>
+</head>
+<body>
+
+<h2>Task Manager</h2>
+
+<label for="filter">Filter / Sort:</label>
+<select id="filter">
+  <option value="">All Tasks</option>
+  <option value="Low">Low Priority</option>
+  <option value="Medium">Medium Priority</option>
+  <option value="High">High Priority</option>
+  <option value="completed">Completed</option>
+</select>
+
+<ul id="taskList">
+  <!-- Tasks will be appended here -->
+</ul>
+
+<script src="script.js"></script>
+</body>
+</html>

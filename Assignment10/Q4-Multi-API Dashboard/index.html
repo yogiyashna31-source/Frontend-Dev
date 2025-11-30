@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-API Dashboard</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  .card { display: inline-block; width: 150px; height: 80px; margin: 10px; padding: 10px; border: 1px solid #ccc; text-align: center; }
+  .loading { background: #f0f0f0; height: 20px; width: 80px; margin: 10px auto; }
+  .warning { color: red; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h2>Dashboard</h2>
+<div class="dashboard">
+  <div class="card">
+    <div>Total Users</div>
+    <div class="loading" id="usersCount"></div>
+  </div>
+  <div class="card">
+    <div>Total Orders</div>
+    <div class="loading" id="ordersCount"></div>
+  </div>
+  <div class="card">
+    <div>Total Products</div>
+    <div class="loading" id="productsCount"></div>
+  </div>
+</div>
+
+<div class="warning" id="warning"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

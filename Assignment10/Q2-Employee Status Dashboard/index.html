@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Status Dashboard</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+  th { background: #f4f4f4; }
+  .toggle-btn { cursor: pointer; padding: 5px 10px; border: none; border-radius: 4px; }
+  .active { background-color: #4CAF50; color: white; }
+  .inactive { background-color: #f44336; color: white; }
+  .error { color: red; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h2>Employee Status Dashboard</h2>
+<div class="error" id="error"></div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Toggle</th>
+    </tr>
+  </thead>
+  <tbody id="employeeTable">
+    <!-- Employee rows will be inserted here -->
+  </tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>

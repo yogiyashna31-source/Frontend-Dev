@@ -1,0 +1,27 @@
+{
+  "users": [
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" },
+    { "id": 3, "name": "Charlie" },
+    { "id": 4, "name": "Diana" },
+    { "id": 5, "name": "Ethan" }
+  ]
+}
+{
+  "orders": [
+    { "id": 1, "productId": 2, "userId": 1 },
+    { "id": 2, "productId": 3, "userId": 2 },
+    { "id": 3, "productId": 1, "userId": 3 },
+    { "id": 4, "productId": 4, "userId": 2 },
+    { "id": 5, "productId": 5, "userId": 4 }
+  ]
+}
+{
+  "products": [
+    { "id": 1, "name": "Laptop" },
+    { "id": 2, "name": "Phone" },
+    { "id": 3, "name": "Headphones" },
+    { "id": 4, "name": "Monitor" },
+    { "id": 5, "name": "Smartwatch" }
+  ]
+}

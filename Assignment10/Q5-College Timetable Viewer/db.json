@@ -1,0 +1,8 @@
+{
+  "timetable": [
+    { "day": "Monday", "subject": "Math", "faculty": "Dr. Smith", "time": "9:00-10:00" },
+    { "day": "Monday", "subject": "Physics", "faculty": "Dr. Johnson", "time": "10:15-11:15" },
+    { "day": "Tuesday", "subject": "Chemistry", "faculty": "Dr. Allen", "time": "9:00-10:00" },
+    { "day": "Wednesday", "subject": "Biology", "faculty": "Dr. Clark", "time": "11:30-12:30" }
+  ]
+}
